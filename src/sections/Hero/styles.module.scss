@@ -1,0 +1,48 @@
+.activeColor {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  &:after {
+    content: "";
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    background-color: #ebebeb;
+    inset: 0;
+    margin: auto;
+    z-index: -1;
+    transform: translateX(-14%);
+    border-radius: 50%;
+  }
+}
+
+.addToCart {
+  position: relative;
+  background: linear-gradient(90deg, #e2cbff 0%, #f6edff 100%);
+  p {
+    &::after {
+      position: absolute;
+      display: block;
+      content: "";
+      width: 1px;
+      height: 40%;
+      background-color: #ffffff4d;
+      z-index: 10;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+      left: calc(100% - 70px);
+    }
+  }
+
+  &::after {
+    display: block;
+    content: "";
+    width: calc(100% - 3px);
+    height: calc(100% - 2px);
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    background: linear-gradient(90deg, #7445b2 0%, #8d5bcf 100%);
+  }
+}

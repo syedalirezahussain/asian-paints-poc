@@ -1,0 +1,19 @@
+.dimensionsTitle {
+  position: relative;
+  &::before {
+    content: url("/src//assets/apostrophe.svg");
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -24px;
+    rotate: 180deg;
+  }
+
+  &::after {
+    content: url("/src//assets/apostrophe.svg");
+    display: block;
+    position: absolute;
+    bottom: 48px;
+    right: -20px;
+  }
+}

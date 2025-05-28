@@ -1,0 +1,17 @@
+.productSliderActive {
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #e2cbff;
+    background: linear-gradient(270deg, #7445b2 0%, #8d5bcf 100%);
+    backdrop-filter: blur(3.3px);
+    border-radius: 50%;
+    right: 31px;
+    top: 0px;
+    bottom: 0px;
+    margin: auto 0;
+  }
+}
