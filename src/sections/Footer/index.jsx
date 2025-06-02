@@ -12,7 +12,7 @@ const Footer = () => {
   const isMobile = useScreenSize() < 768;
 
   return (
-    <footer className="max-w-[1318px] w-[calc(100%-16px)] mx-auto md:w-full px-7 py-6 md:p-15 mt-6 flex md:flex-row flex-col justify-center items-stretch rounded-[20px] md:rounded-[32px] bg-[#16191C]">
+    <footer className="max-w-[1318px] w-[calc(100%-16px)] mx-auto md:w-full px-7 py-6 md:p-15 mt-6 flex md:flex-row flex-col justify-between items-stretch rounded-[20px] md:rounded-[32px] bg-[#16191C]">
       <div className="w-full basis-[52%] flex flex-col justify-start items-start">
         <h3 className="text-[34px] md:text-[74px] font-medium leading-[101%] text-white mb-2">
           Curated for you

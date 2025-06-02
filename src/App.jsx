@@ -12,7 +12,7 @@ import Footer from "./sections/Footer";
 
 function App() {
   return (
-    <div className="w-screen max-w-[1440px] mx-auto flex flex-col justify-start items-center mb-6">
+    <div className="w-screen max-w-[1440px] mx-auto flex flex-col justify-start items-center mb-3 md:mb-6">
       <Navbar />
       <Hero />
       <Dimensions />

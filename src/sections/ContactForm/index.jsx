@@ -11,8 +11,8 @@ import useScreenSize from "@/hooks/useScreenSize";
 const ContactForm = () => {
   const isMobile = useScreenSize() < 768;
   return (
-    <div className="w-full flex justify-between items-stretch max-w-[1318px] mt-[81px] md:mt-[110px] bg-[#F9F9F9] md:rounded-[20px] md:border border-[#0000001A] overflow-hidden">
-      <div className="w-full md:basis-[57%] flex flex-col gap-[32px] justify-center items-start px-3 md:px-14 md:py-[77px] py-8">
+    <div className="w-full flex md:max-h-[568px] justify-between items-stretch max-w-[1318px] mt-[81px] md:mt-[110px] bg-[#F9F9F9] md:rounded-[20px] md:border border-[#0000001A] overflow-hidden">
+      <div className="w-full md:basis-[57%] flex flex-col gap-[32px] justify-center items-start  px-3 md:px-14 md:py-[77px] py-8">
         <div className="w-full flex flex-col justify-start items-start text-[#3a3a3a] mb-[10px]">
           {!isMobile && (
             <p className="text-2xl leading-[110%]">A place you call your own</p>
@@ -23,7 +23,7 @@ const ContactForm = () => {
               #BeautifulHome
             </em>
             {!isMobile ? (
-              <>&nbsp;with us.</>
+              <>{"With Us"}</>
             ) : (
               <p className="text-[#3a3a3a] not-italic text-base self-center">
                 With Asian Paints
@@ -146,7 +146,7 @@ const ContactForm = () => {
         </label>
 
         <button
-          className="md:w-auto w-[calc(100%-8px)] mx-auto !py-6 !pl-8 md:!pl-10 !pr-9 flex justify-between items-center gap-6 !rounded-full 
+          className="md:w-auto w-[calc(100%-8px)] mx-auto md:mx-[unset] !py-6 !pl-8 md:!pl-10 !pr-9 flex justify-between items-center gap-6 !rounded-full 
         border-[2px] border-[rgba(226,203,255,0.10)] bg-gradient-to-l from-[#7445B2] to-[#8D5BCF]"
         >
           <p className="md:text-lg leading-[136%] tracking-[-0.36px] font-medium text-white">
@@ -158,15 +158,9 @@ const ContactForm = () => {
 
       {/* IMAGE */}
       {!isMobile && (
-        <div
-          className="w-full basis-[42%] flex justify-center items-center"
-          style={{
-            backgroundImage: "url(/src/assets/contact-form-1.png)",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-          }}
-        ></div>
+        <div className="w-full basis-[42%] flex justify-center items-center">
+          <img src={ContactFormImage} alt="" className="w-full object-cover" />
+        </div>
       )}
     </div>
   );
