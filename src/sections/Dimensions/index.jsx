@@ -18,7 +18,7 @@ const Dimensions = () => {
   const isMobile = useScreenSize() < 768;
   return (
     <div
-      className={`${
+      className={`scroll-snap-start ${
         !isMobile ? "container" : ""
       } w-full flex flex-col justify-start items-center gap-7 !pt-[39px] md:!pt-[70px]`}
     >

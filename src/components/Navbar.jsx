@@ -10,7 +10,7 @@ const Navbar = () => {
   const isMobile = useScreenSize() < 768;
 
   return (
-    <nav className="w-screen flex justify-center items-center border md:border-none border-[#D1D1D866] px-5 md:py-3 md:px-[63px] md:pt-[30px] bg-white">
+    <nav className="fixed top-0 w-screen flex justify-center items-center border md:border-none border-[#D1D1D866] px-5 md:py-3 md:px-[63px] md:pt-[30px] md:pb-4 bg-white z-50">
       <div className="w-full flex md:justify-between justify-start items-center gap-5">
         <div className="md:grow-0 grow">
           <img width={94} height={27} src={AsianPaintsLogo} alt="" />

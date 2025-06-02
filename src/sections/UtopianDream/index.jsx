@@ -10,7 +10,10 @@ import useScreenSize from "@/hooks/useScreenSize";
 const UtopianDream = () => {
   const isMobile = useScreenSize() < 768;
   return (
-    <div className=" w-full flex flex-col justify-start items-center pt-[80px] pb-[60px] ">
+    <div
+      id="utopian-dream"
+      className="scroll-snap-start w-full flex flex-col justify-start items-center pt-[80px] pb-[60px] "
+    >
       <div
         className={`w-full ${
           !isMobile ? "container" : ""
