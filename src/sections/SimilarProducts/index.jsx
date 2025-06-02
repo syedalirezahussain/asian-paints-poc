@@ -1,9 +1,12 @@
 import { similarProductItems } from "@/constants";
+import useScreenSize from "@/hooks/useScreenSize";
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import { useEffect, useState } from "react";
 import { SlArrowRight } from "react-icons/sl";
 
 const SimilarProducts = () => {
+  const isMobile = useScreenSize() < 768;
+
   const [activeSlide, setActiveSlide] = useState(similarProductItems[0]);
 
   const isLastSlide =
@@ -14,24 +17,25 @@ const SimilarProducts = () => {
     setActiveSlide(similarProductItems[0]);
   }, []);
   return (
-    <div className="pl-[100px] w-full flex flex-col gap-[30px] justify-start items-center pt-[80px] pb-[120px]">
-      <h3 className="w-full text-[74px] leading-[112%] text-[#3A3A3A]">
+    <div className="md:pl-[100px] w-full flex flex-col gap-[30px] justify-start items-center md:pt-[80px] pt-8 pb-[52px] md:pb-[120px]">
+      <h3 className="w-full text-2xl md:text-[74px] leading-[112%] px-7 text-[#3A3A3A]">
         <em className="not-italic font-bold">Similar</em> Products
       </h3>
 
       <Splide
         className="productSlider relative h-full w-full"
         hasTrack={false}
-        aria-label="My Favorite Images"
+        aria-label="Similar Products"
         options={{
           perPage: 1,
           pagination: false,
           speed: 1000,
-          fixedWidth: "470px",
-          height: "640px",
-          gap: 40,
+          fixedWidth: isMobile ? "260px" : "470px",
+          height: isMobile ? "375px" : "640px",
+          gap: isMobile ? 12 : 40,
           padding: {
-            right: "100%",
+            right: isMobile ? "15%" : "50%",
+            left: isMobile ? "15%" : null,
           },
         }}
         onMove={(_, newIndex) => {
@@ -44,7 +48,7 @@ const SimilarProducts = () => {
               <div className="w-full h-full flex flex-col justify-start items-center gap-[27px]">
                 <div className="w-full h-full flex justify-center items-center flex-grow bg-[#f6f6f6] rounded-[20px]">
                   <img
-                    className="w-fit h-fit mix-blend-multiply "
+                    className="md:w-fit md:h-fit mix-blend-multiply "
                     src={item.image}
                     alt={item.title}
                     style={item.styles}
@@ -65,13 +69,13 @@ const SimilarProducts = () => {
         </SplideTrack>
 
         {/* ARROWS */}
-        <div className="splide__arrows absolute -top-[75px] right-[63px] flex justify-center items-center gap-3">
-          <button className="!w-16 !h-16 splide__arrow splide__arrow--prev !border !border-[#C1C1C1] !bg-white !opacity-100 !left-[unset] !relative focus:!outline-none focus-visible:!outline-none">
+        <div className="splide__arrows absolute -top-[44px] md:-top-[75px] right-5 md:right-[63px] flex justify-center items-center gap-3">
+          <button className="!w-11 !h-11 md:!w-16 md:!h-16 splide__arrow splide__arrow--prev !border !border-[#C1C1C1] !bg-white !opacity-100 !left-[unset] !relative focus:!outline-none focus-visible:!outline-none">
             <SlArrowRight stroke="#9a9a9a" size={20} className="!w-2 !h-2" />
           </button>
           <button
             disabled={isLastSlide}
-            className={`!w-16 !h-16 splide__arrow splide__arrow--next !border !border-[#C1C1C1] !bg-white 
+            className={`!w-11 !h-11 md:!w-16 md:!h-16 splide__arrow splide__arrow--next !border !border-[#C1C1C1] !bg-white 
                     !right-[unset] !relative focus:!outline-none focus-visible:!outline-none
                     disabled:opacity-50 disabled:cursor-not-allowed ${
                       isLastSlide

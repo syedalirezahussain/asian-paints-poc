@@ -8,10 +8,11 @@ import UtopianDream from "@/sections/UtopianDream";
 import SimilarProducts from "@/sections/SimilarProducts";
 import FreshFinds from "@/sections/FreshFinds";
 import ContactForm from "@/sections/ContactForm";
+import Footer from "./sections/Footer";
 
 function App() {
   return (
-    <div className="w-screen max-w-[1440px] mx-auto flex flex-col justify-start items-center mb-[200px]">
+    <div className="w-screen max-w-[1440px] mx-auto flex flex-col justify-start items-center mb-6">
       <Navbar />
       <Hero />
       <Dimensions />
@@ -19,6 +20,7 @@ function App() {
       <SimilarProducts />
       <FreshFinds />
       <ContactForm />
+      <Footer />
     </div>
   );
 }

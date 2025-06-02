@@ -3,9 +3,13 @@ import { FiMinus, FiPlus } from "react-icons/fi";
 
 const AccordionItem = ({ index, title, content, isOpen, onClick }) => {
   return (
-    <div className="accordionItem rounded p-4 md:last:pb-4 last:pb-0 transition-all duration-300">
+    <div
+      className="accordionItem w-full after:!mt-[21px] pt-5 
+    first:border-t first:border-[#BBBBBB33] transition-all duration-300
+    !max-h-[187px] overflow-hidden"
+    >
       <div
-        className="w-full flex justify-between items-center cursor-pointer font-medium h-9 text-xl md:text-2xl"
+        className="w-full flex justify-between items-center cursor-pointer font-medium h-5"
         onClick={() => onClick(index)}
       >
         <h3 className={`${isOpen ? "text-[#3A3A3A]" : "text-[#3A3A3A99]"}`}>
@@ -14,11 +18,11 @@ const AccordionItem = ({ index, title, content, isOpen, onClick }) => {
         {isOpen ? <FiMinus size={24} /> : <FiPlus size={24} />}
       </div>
       <div
-        className={`overflow-hidden transition-all duration-300 ease-in-out text-[#6B6767] text-[14px] md:text-xl ${
-          isOpen ? "max-h-96 opacity-100 mt-3" : "max-h-0 opacity-0"
+        className={`w-full overflow-hidden transition-all duration-300 ease-in-out text-[#6B6767] ${
+          isOpen ? "max-h-32 h-32 opacity-100 mt-3 pb-1" : "max-h-0 opacity-0"
         }`}
       >
-        <p>{content}</p>
+        <div className="w-full">{content}</div>
       </div>
     </div>
   );
@@ -32,7 +36,7 @@ const Accordion = ({ items }) => {
   };
 
   return (
-    <div className="basis-[48%] flex flex-col justify-start items-center mx-3 md:mx-0 px-7 md:px-10 py-8 md:py-16 rounded-[20px] bg-[#fafafa]">
+    <div className="mt-5 w-full flex flex-col justify-start items-center md:mx-0 rounded-[20px] bg-[#fafafa]">
       {items?.map((item, index) => (
         <AccordionItem
           key={index}

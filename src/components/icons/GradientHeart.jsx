@@ -1,6 +1,6 @@
 import React from "react";
 
-const GradientHeart = () => {
+const GradientHeart = ({ ...props }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,6 +9,7 @@ const GradientHeart = () => {
       viewBox="0 0 28 29"
       fill="none"
       className="cursor-pointer"
+      {...props}
     >
       <path
         d="M13.9996 24.659C-9.33327 11.7625 7.00005 -2.23753 13.9996 6.6152C21.0001 -2.23753 37.3334 11.7625 13.9996 24.659Z"

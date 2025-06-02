@@ -12,34 +12,44 @@ import { accordionItems, dimensionItems } from "@/constants";
 
 // styles
 import styles from "@/sections/Dimensions/styles.module.scss";
+import useScreenSize from "@/hooks/useScreenSize";
 
 const Dimensions = () => {
+  const isMobile = useScreenSize() < 768;
   return (
-    <div className="container w-full flex flex-col justify-start items-center gap-7 !pt-[70px]">
-      <div className="w-[52%] flex flex-col justify-start items-start gap-[30px] mr-auto text-[#3a3a3a]">
-        <h3
-          className={`text-[88px] font-medium leading-[88%] ${styles.dimensionsTitle}`}
-        >
-          A chair that speaks for itself.
-        </h3>
-        <p className="text-[24px] leading-[126%]">
-          Its clean lines, impeccable craftsmanship, & luxurious leather exude a
-          timeless elegance. It's more than just furniture; it's a statement of
-          refined taste.
-        </p>
-      </div>
+    <div
+      className={`${
+        !isMobile ? "container" : ""
+      } w-full flex flex-col justify-start items-center gap-7 !pt-[39px] md:!pt-[70px]`}
+    >
+      {!isMobile && (
+        <div className="w-[52%] flex flex-col justify-start items-start gap-[30px] mr-auto text-[#3a3a3a]">
+          <h3
+            className={`text-[88px] font-medium leading-[88%] ${styles.dimensionsTitle}`}
+          >
+            A chair that speaks for itself.
+          </h3>
+          <p className="text-[24px] leading-[126%]">
+            Its clean lines, impeccable craftsmanship, & luxurious leather exude
+            a timeless elegance. It's more than just furniture; it's a statement
+            of refined taste.
+          </p>
+        </div>
+      )}
 
-      <div className="w-full flex justify-center items-stretch gap-[32px] pt-11">
-        <div className="w-full basis-[47%] flex flex-wrap gap-x-7 gap-y-5">
-          <div className="w-full h-[213px] flex flex-col justify-between items-start basis-full border border-[#0000001A] rounded-[20px] px-7 py-[33px]">
-            <span className="w-[52px] h-[52px] flex justify-center items-center rounded-full border border-[#0000001A]">
-              <FaBezierCurve strokeWidth={0.5} size={20} />
+      <div className="w-full flex md:flex-row flex-col-reverse justify-center items-stretch gap-[32px] md:pt-11 ">
+        <div className="w-full md:basis-[47%] flex flex-wrap gap-3 md:gap-x-7 md:gap-y-5 md:px-0 px-3">
+          <div className="w-full h-[164px] md:h-[213px] flex flex-col justify-between items-start basis-full border border-[#0000000F] rounded-[20px] px-[22px] md:px-7 py-[33px]">
+            <span className="w-11 h-11 md:w-[52px] md:h-[52px] flex justify-center items-center rounded-full border border-[#0000001A]">
+              <FaBezierCurve strokeWidth={0.5} size={isMobile ? 16 : 20} />
             </span>
 
-            <div className="flex items-center gap-7">
+            <div className="w-full flex justify-between items-center gap-5 md:gap-7">
               <div className="flex flex-col justify-start items-start gap-2">
-                <p className="leading-[132%] text-[#6B6767]">Length</p>
-                <h5 className="text-[20px] font-medium leading-[102%]">
+                <p className="leading-[132%] text-[#6B6767] text-[12px] md:text-base">
+                  Length
+                </p>
+                <h5 className="md:text-[20px] font-medium leading-[102%]">
                   2000cm
                 </h5>
               </div>
@@ -47,8 +57,10 @@ const Dimensions = () => {
               <IoMdClose size={17} />
 
               <div className="flex flex-col justify-start items-start gap-2">
-                <p className="leading-[132%] text-[#6B6767]">Breadth</p>
-                <h5 className="text-[20px] font-medium leading-[102%]">
+                <p className="leading-[132%] text-[#6B6767] text-[12px] md:text-base">
+                  Breadth
+                </p>
+                <h5 className="md:text-[20px] font-medium leading-[102%]">
                   1050cm
                 </h5>
               </div>
@@ -56,8 +68,10 @@ const Dimensions = () => {
               <IoMdClose size={17} />
 
               <div className="flex flex-col justify-start items-start gap-2">
-                <p className="leading-[132%] text-[#6B6767]">Height</p>
-                <h5 className="text-[20px] font-medium leading-[102%]">
+                <p className="leading-[132%] text-[#6B6767] text-[12px] md:text-base">
+                  Height
+                </p>
+                <h5 className="md:text-[20px] font-medium leading-[102%]">
                   750cm
                 </h5>
               </div>
@@ -67,14 +81,16 @@ const Dimensions = () => {
           {dimensionItems.map((item) => (
             <div
               key={item.title}
-              className="w-full flex flex-col justify-between items-start h-[213px] basis-[47%] border border-[#0000001A] rounded-[20px] px-7 py-[33px]"
+              className="w-full flex flex-col justify-between items-start h-[164px] md:h-[213px] basis-[48.2%] md:basis-[47.5%] border border-[#0000000F] rounded-[20px] p-6 md:px-7 md:py-[33px]"
             >
-              <span className="w-[52px] h-[52px] flex justify-center items-center rounded-full border border-[#0000001A]">
-                <item.Icon />
+              <span className="w-11 h-11 md:w-[52px] md:h-[52px] flex justify-center items-center rounded-full border border-[#0000001A]">
+                <item.Icon className="w-4 h-4" />
               </span>
-              <div className="flex flex-col justify-start items-start gap-2">
-                <p className="leading-[132%] text-[#6B6767]">{item.title}</p>
-                <h5 className="text-[20px] font-medium leading-[102%]">
+              <div className="flex flex-col justify-start items-start gap-1 md:gap-2">
+                <p className="leading-[132%] text-[#6B6767] text-[12px] md:text-base">
+                  {item.title}
+                </p>
+                <h5 className="md:text-[20px] font-medium leading-[102%]">
                   {item.content}
                 </h5>
               </div>
@@ -82,17 +98,33 @@ const Dimensions = () => {
           ))}
         </div>
 
-        <div className="w-[calc(100%-47%)] h-[691px] rounded-[20px] border border-[#0000001A] overflow-hidden">
+        <div className="relative md:w-[calc(100%-47%)] md:h-[691px] md:rounded-[20px] border border-[#0000001A] md:overflow-hidden mb-[209px] md:mb-0">
           <img
             src={Dimensions1}
             alt="dimensions-1.png"
             className="w-full h-full object-cover"
           />
+
+          {isMobile && (
+            <div className="w-[92%] absolute -bottom-[42%] -right-[5%] bg-[#fafafa] rounded-l-[20px] flex flex-col justify-center items-center pl-[51px] pr-12 py-[33px]">
+              <span className="w-1 h-16 bg-[#7445B2] absolute left-[30px] top-[36px]"></span>
+              <h3
+                className={`w-full text-[36px] font-medium leading-[96%] pb-4`}
+              >
+                A chair that speaks for itself.
+              </h3>
+              <p className="text-[14px] leading-[126%]">
+                Its clean lines, impeccable craftsmanship, & luxurious leather
+                exude a timeless elegance. It's more than just furniture; it's a
+                statement of refined taste.
+              </p>
+            </div>
+          )}
         </div>
       </div>
 
-      <div className="w-full flex justify-between items-start ">
-        <div className="basis-[48%] h-[691px] rounded-[20px] border border-[#0000001A] overflow-hidden">
+      <div className="w-full flex md:flex-row flex-col justify-between items-start ">
+        <div className="md:basis-[48%] h-[395px] md:h-[691px] md:rounded-[20px] md:border border-[#0000001A] overflow-hidden">
           <img
             src={Dimensions2}
             alt="dimensions-2.png"
