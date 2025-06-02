@@ -17,7 +17,7 @@ const Slider = () => {
   return (
     <div className="w-full flex flex-col justify-start items-center">
       <Splide
-        className="heroSlider relative h-[390px] w-full"
+        className="heroSlider relative h-[390px] md:h-auto w-full"
         hasTrack={false}
         aria-label="My Favorite Images"
         options={{
@@ -30,7 +30,7 @@ const Slider = () => {
           setActiveSlide(heroSliderItems[newIndex]);
         }}
       >
-        <SplideTrack className="max-h-full  h-full">
+        <SplideTrack className="max-h-full h-full">
           {heroSliderItems.map((item) => (
             <SplideSlide key={item.id} className="h-full w-full">
               <div className="w-full h-full flex justify-center items-center">
