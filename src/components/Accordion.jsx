@@ -12,7 +12,11 @@ const AccordionItem = ({ index, title, content, isOpen, onClick }) => {
         <h3 className={`${isOpen ? "text-[#3A3A3A]" : "text-[#3A3A3A99]"}`}>
           {title}
         </h3>
-        {isOpen ? <FiMinus size={24} /> : <FiPlus size={24} />}
+        {isOpen ? (
+          <FiMinus size={24} stroke="#4D4D4D" />
+        ) : (
+          <FiPlus size={24} stroke="#4D4D4D" />
+        )}
       </div>
       <div
         className={`overflow-hidden transition-all duration-300 ease-in-out text-[#6B6767] text-[14px] md:text-xl ${

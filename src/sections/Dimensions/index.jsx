@@ -50,7 +50,7 @@ const Dimensions = () => {
                 <p className="leading-[132%] text-[#6B6767] text-[12px] md:text-base">
                   Length
                 </p>
-                <h5 className="md:text-[20px] font-medium leading-[102%]">
+                <h5 className="md:text-[20px] font-medium leading-[102%] text-[#3A3A3A]">
                   2000cm
                 </h5>
               </div>
@@ -61,7 +61,7 @@ const Dimensions = () => {
                 <p className="leading-[132%] text-[#6B6767] text-[12px] md:text-base">
                   Breadth
                 </p>
-                <h5 className="md:text-[20px] font-medium leading-[102%]">
+                <h5 className="md:text-[20px] font-medium leading-[102%] text-[#3A3A3A]">
                   1050cm
                 </h5>
               </div>
@@ -72,7 +72,7 @@ const Dimensions = () => {
                 <p className="leading-[132%] text-[#6B6767] text-[12px] md:text-base">
                   Height
                 </p>
-                <h5 className="md:text-[20px] font-medium leading-[102%]">
+                <h5 className="md:text-[20px] font-medium leading-[102%] text-[#3A3A3A]">
                   750cm
                 </h5>
               </div>
@@ -91,7 +91,7 @@ const Dimensions = () => {
                 <p className="leading-[132%] text-[#6B6767] text-[12px] md:text-base">
                   {item.title}
                 </p>
-                <h5 className="md:text-[20px] font-medium leading-[102%]">
+                <h5 className="md:text-[20px] font-medium leading-[102%] text-[#3A3A3A]">
                   {item.content}
                 </h5>
               </div>

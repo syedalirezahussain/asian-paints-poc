@@ -8,7 +8,6 @@ import { AnimatePresence } from "framer-motion";
 // icons
 import { SlArrowRight } from "react-icons/sl";
 import { LiaAngleDownSolid } from "react-icons/lia";
-import { LuPlus } from "react-icons/lu";
 import GradientHeart from "@/components/icons/GradientHeart";
 import { LuInfo } from "react-icons/lu";
 import Location from "@/components/icons/Location";
@@ -49,14 +48,10 @@ const Hero = () => {
       const heroBottom = heroRef.current?.getBoundingClientRect().bottom ?? 0;
       const utopianDreamTop = utopianDreamRef?.getBoundingClientRect().top ?? 0;
       if (heroBottom < 100) {
-        console.log("call");
-
         setIsPopupVisible(true);
       }
 
       if (utopianDreamTop < 100 || heroBottom >= 100) {
-        console.log("call end");
-
         setIsPopupVisible(false);
       }
     };
@@ -140,7 +135,11 @@ const Hero = () => {
                   className={`w-full h-[116px] border-t border-[#BBBBBB33] flex justify-between items-center px-[30px] pt-15 pb-7 cursor-pointer ${styles.addToCart}`}
                 >
                   <p className="z-10 text-white uppercase">Add to Cart</p>
-                  <LiaAngleDownSolid fill="#fff" className="z-10" />
+                  <LiaAngleDownSolid
+                    stroke="#fff"
+                    fill="#fff"
+                    className="z-10"
+                  />
                 </div>
               </div>
             </FadeInOnScroll>

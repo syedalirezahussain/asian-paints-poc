@@ -30,12 +30,12 @@ const ProductSlider = () => {
         <FadeInOnScroll className="w-full basis-[30%] h-full flex flex-col justify-start items-center py-12">
           {productSliderItems.map((item, index) => (
             <li
-              className={`relative w-full flex justify-center items-center my-6 first:!mt-0 last:mb-0 ${
+              className={`relative w-full flex justify-start items-center gap-5 my-6 first:!mt-0 last:mb-0 text-[#3A3A3A] ${
                 activeSlide.id === item.id && styles.productSliderActive
               }`}
               key={item.id}
             >
-              <span className="absolute left-0 top-0 bottom-0 my-auto text-[28px] text-[#A8A8A8] leading-[102%]">
+              <span className=" text-[28px] text-[#A8A8A8] leading-[102%]">
                 {integerToRoman(index + 1)}
               </span>
               <p

@@ -35,15 +35,13 @@ const ContactForm = () => {
 
         {/* IMAGE */}
         {isMobile && (
-          <div
-            className="w-full h-[358px] flex justify-center items-center rounded-[20px]"
-            style={{
-              backgroundImage: "url(/src/assets/contact-form-1.png)",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-              backgroundSize: "cover",
-            }}
-          ></div>
+          <div className="w-full h-[358px] flex justify-center items-center rounded-[20px] overflow-hidden">
+            <img
+              src={ContactFormImage}
+              alt=""
+              className="w-full object-cover"
+            />
+          </div>
         )}
 
         {isMobile ? (

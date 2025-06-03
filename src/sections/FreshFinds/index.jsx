@@ -45,7 +45,7 @@ const FreshFinds = () => {
               <p>March 24</p>
             </div>
 
-            <p className="text-[14px] font-medium leading-[104%] mb-[14px]">
+            <p className="text-[14px] font-medium leading-[104%] mb-[14px] text-black">
               7 cardinal sins of interior design
             </p>
           </div>
@@ -56,7 +56,7 @@ const FreshFinds = () => {
               <span className="w-[3.8px] h-[3.8px] bg-[#d9d9d9] rounded-full"></span>
               <p>March 24</p>
             </div>
-            <p className="text-[20px] font-medium leading-[104%] mt-[8px] px-6 mb-[14px]">
+            <p className="text-[20px] font-medium leading-[104%] mt-[8px] px-6 mb-[14px] text-black">
               Being earth-friendly in Gujarat with Vinu Daniel
             </p>
             <div className="rounded-[20px] overflow-hidden h-[336px] w-full">
@@ -77,7 +77,7 @@ const FreshFinds = () => {
               <p>March 24</p>
             </div>
 
-            <p className="text-[14px] font-medium leading-[104%] mb-[14px]">
+            <p className="text-[14px] font-medium leading-[104%] mb-[14px] text-black">
               Guide to flooring sheets
             </p>
           </div>
@@ -108,7 +108,7 @@ const FreshFinds = () => {
             />
           </div>
           <div className="row-span-1 col-span-1 pl-[40px] rounded-[20px]">
-            <p className="text-[32px] font-medium leading-[104%] mb-[14px] mt-11">
+            <p className="text-[32px] font-medium leading-[104%] mb-[14px] mt-11 text-black">
               7 cardinal sins of interior design
             </p>
 
@@ -121,7 +121,7 @@ const FreshFinds = () => {
 
           {/* ROW 2  */}
           <div className="row-span-1 col-span-1 rounded-[20px]">
-            <p className="text-[32px] font-medium leading-[104%] mb-[14px] mt-11">
+            <p className="text-[32px] font-medium leading-[104%] mb-[14px] mt-11 text-black">
               7 cardinal sins of interior design
             </p>
 

@@ -30,8 +30,9 @@ const Navbar = () => {
 
         {isMobile ? (
           <div className="flex justify-center items-center gap-4 ">
-            <LuHeart size={16} />
+            <LuHeart size={16} stroke="#262F56" strokeWidth={2.5} />
             <PiShoppingCartSimpleBold
+              fill="#262F56"
               size={16}
               style={{
                 transform: "rotateY(180deg)",
@@ -41,11 +42,12 @@ const Navbar = () => {
         ) : (
           <div className="flex justify-center items-center gap-6">
             <Button>
-              <LuHeart />
+              <LuHeart stroke="#262F56" strokeWidth={2.5} />
             </Button>
 
             <Button>
               <PiShoppingCartSimpleBold
+                fill="#262F56"
                 style={{
                   transform: "rotateY(180deg)",
                 }}

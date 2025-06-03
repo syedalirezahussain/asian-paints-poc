@@ -63,10 +63,8 @@ const Slider = () => {
                     <img
                       src={item.image}
                       alt={item.alt}
-                      className={`is-active w-10 h-10 overflow-hidden rounded-[8px] ${
-                        activeSlide.id === item.id
-                          ? "!w-16 !h-16 mb-6 transition-all duration-300 ease-in-pagination"
-                          : ""
+                      className={`is-active w-10 h-10 overflow-hidden rounded-[8px] transition-all duration-300 ease-linear ${
+                        activeSlide.id === item.id ? "!w-16 !h-16 mb-6 " : ""
                       }`}
                     />
                   </li>
