@@ -13,6 +13,7 @@ import { accordionItems, dimensionItems } from "@/constants";
 // styles
 import styles from "@/sections/Dimensions/styles.module.scss";
 import useScreenSize from "@/hooks/useScreenSize";
+import FadeInOnScroll from "@/components/FadeInOnScroll";
 
 const Dimensions = () => {
   const isMobile = useScreenSize() < 768;
@@ -23,7 +24,7 @@ const Dimensions = () => {
       } w-full flex flex-col justify-start items-center gap-7 !pt-[39px] md:!pt-[70px]`}
     >
       {!isMobile && (
-        <div className="w-[52%] flex flex-col justify-start items-start gap-[30px] mr-auto text-[#3a3a3a]">
+        <FadeInOnScroll className="w-[52%] flex flex-col justify-start items-start gap-[30px] mr-auto text-[#3a3a3a]">
           <h3
             className={`text-[88px] font-medium leading-[88%] ${styles.dimensionsTitle}`}
           >
@@ -34,12 +35,12 @@ const Dimensions = () => {
             a timeless elegance. It's more than just furniture; it's a statement
             of refined taste.
           </p>
-        </div>
+        </FadeInOnScroll>
       )}
 
       <div className="w-full flex md:flex-row flex-col-reverse justify-center items-stretch gap-[32px] md:pt-11 ">
         <div className="w-full md:basis-[47%] flex flex-wrap gap-3 md:gap-x-7 md:gap-y-5 md:px-0 px-3">
-          <div className="w-full h-[164px] md:h-[213px] flex flex-col justify-between items-start basis-full border border-[#0000000F] rounded-[20px] px-[22px] md:px-7 py-[33px]">
+          <FadeInOnScroll className="w-full h-[164px] md:h-[213px] flex flex-col justify-between items-start basis-full border border-[#0000000F] rounded-[20px] px-[22px] md:px-7 py-[33px]">
             <span className="w-11 h-11 md:w-[52px] md:h-[52px] flex justify-center items-center rounded-full border border-[#0000001A]">
               <FaBezierCurve strokeWidth={0.5} size={isMobile ? 16 : 20} />
             </span>
@@ -76,10 +77,10 @@ const Dimensions = () => {
                 </h5>
               </div>
             </div>
-          </div>
+          </FadeInOnScroll>
 
           {dimensionItems.map((item) => (
-            <div
+            <FadeInOnScroll
               key={item.title}
               className="w-full flex flex-col justify-between items-start h-[164px] md:h-[213px] basis-[48.2%] md:basis-[47.5%] border border-[#0000000F] rounded-[20px] p-6 md:px-7 md:py-[33px]"
             >
@@ -94,11 +95,11 @@ const Dimensions = () => {
                   {item.content}
                 </h5>
               </div>
-            </div>
+            </FadeInOnScroll>
           ))}
         </div>
 
-        <div className="relative md:w-[calc(100%-47%)] md:h-[691px] md:rounded-[20px] border border-[#0000001A] md:overflow-hidden mb-[209px] md:mb-0">
+        <FadeInOnScroll className="relative md:w-[calc(100%-47%)] md:h-[691px] md:rounded-[20px] border border-[#0000001A] md:overflow-hidden mb-[209px] md:mb-0">
           <img
             src={Dimensions1}
             alt="dimensions-1.png"
@@ -120,17 +121,17 @@ const Dimensions = () => {
               </p>
             </div>
           )}
-        </div>
+        </FadeInOnScroll>
       </div>
 
       <div className="w-full flex md:flex-row flex-col justify-between items-start ">
-        <div className="md:basis-[48%] h-[395px] md:h-[691px] md:rounded-[20px] md:border border-[#0000001A] overflow-hidden">
+        <FadeInOnScroll className="md:basis-[48%] h-[395px] md:h-[691px] md:rounded-[20px] md:border border-[#0000001A] overflow-hidden">
           <img
             src={Dimensions2}
             alt="dimensions-2.png"
             className="w-full h-full object-cover"
           />
-        </div>
+        </FadeInOnScroll>
 
         <Accordion items={accordionItems} />
       </div>

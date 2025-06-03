@@ -9,6 +9,7 @@ import { SlArrowRight } from "react-icons/sl";
 // styles
 import styles from "./styles.module.scss";
 import useScreenSize from "@/hooks/useScreenSize";
+import FadeInOnScroll from "@/components/FadeInOnScroll";
 
 const ProductSlider = () => {
   const isMobile = useScreenSize() < 768;
@@ -26,7 +27,7 @@ const ProductSlider = () => {
   return (
     <div className="w-full flex justify-center items-start mt-[52px] gap-12 md:pl-[100px]">
       {!isMobile && (
-        <ul className="w-full basis-[30%] h-full flex flex-col justify-start items-center py-12">
+        <FadeInOnScroll className="w-full basis-[30%] h-full flex flex-col justify-start items-center py-12">
           {productSliderItems.map((item, index) => (
             <li
               className={`relative w-full flex justify-center items-center my-6 first:!mt-0 last:mb-0 ${
@@ -48,10 +49,10 @@ const ProductSlider = () => {
               </p>
             </li>
           ))}
-        </ul>
+        </FadeInOnScroll>
       )}
 
-      <div className="w-full md:w-[66.5%] md:h-[545px] flex justify-center items-start">
+      <FadeInOnScroll className="w-full md:w-[66.5%] md:h-[545px] flex justify-center items-start">
         <Splide
           className="productSlider relative h-full w-full"
           hasTrack={false}
@@ -140,7 +141,7 @@ const ProductSlider = () => {
             </div>
           )}
         </Splide>
-      </div>
+      </FadeInOnScroll>
     </div>
   );
 };

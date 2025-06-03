@@ -7,11 +7,12 @@ import ContactFormImage from "@/assets/contact-form-1.png";
 import { FaCheck } from "react-icons/fa";
 import { HiArrowRight } from "react-icons/hi";
 import useScreenSize from "@/hooks/useScreenSize";
+import FadeInOnScroll from "@/components/FadeInOnScroll";
 
 const ContactForm = () => {
   const isMobile = useScreenSize() < 768;
   return (
-    <div className="w-full flex md:max-h-[568px] justify-between items-stretch max-w-[1318px] mt-[81px] md:mt-[110px] bg-[#F9F9F9] md:rounded-[20px] md:border border-[#0000001A] overflow-hidden">
+    <FadeInOnScroll className="w-full flex md:max-h-[568px] justify-between items-stretch max-w-[1318px] mt-[81px] md:mt-[110px] bg-[#F9F9F9] md:rounded-[20px] md:border border-[#0000001A] overflow-hidden">
       <div className="w-full md:basis-[57%] flex flex-col gap-[32px] justify-center items-start  px-3 md:px-14 md:py-[77px] py-8">
         <div className="w-full flex flex-col justify-start items-start text-[#3a3a3a] mb-[10px]">
           {!isMobile && (
@@ -162,7 +163,7 @@ const ContactForm = () => {
           <img src={ContactFormImage} alt="" className="w-full object-cover" />
         </div>
       )}
-    </div>
+    </FadeInOnScroll>
   );
 };
 

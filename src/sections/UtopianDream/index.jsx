@@ -6,6 +6,7 @@ import UtopianDreamImg from "@/assets/utopian-dream.png";
 // components
 import ProductSlider from "./productSlider";
 import useScreenSize from "@/hooks/useScreenSize";
+import FadeInOnScroll from "@/components/FadeInOnScroll";
 
 const UtopianDream = () => {
   const isMobile = useScreenSize() < 768;
@@ -14,12 +15,12 @@ const UtopianDream = () => {
       id="utopian-dream"
       className="scroll-snap-start w-full flex flex-col justify-start items-center pt-[80px] pb-[60px] "
     >
-      <div
+      <FadeInOnScroll
         className={`w-full ${
           !isMobile ? "container" : ""
         } px-3 md:px-[63px] relative`}
       >
-        <div className="md:relative bottom-0 left-10 absolute z-10 w-full flex flex-col justify-start items-start mb-[48px] ">
+        <div className="md:relative md:bottom-[unset] md:left-[unset] bottom-0 left-10 absolute z-10 w-full flex flex-col justify-start items-start mb-[48px] ">
           <p className="text-[20px] md:text-[32px] text-white md:text-[#2b2b2b] leading-[101%]">
             A tale of the
           </p>
@@ -40,7 +41,7 @@ const UtopianDream = () => {
         </div>
 
         {/* OVERLAY */}
-      </div>
+      </FadeInOnScroll>
 
       <ProductSlider />
     </div>

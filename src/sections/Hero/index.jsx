@@ -19,6 +19,7 @@ import useScreenSize from "@/hooks/useScreenSize";
 // styles
 import styles from "./styles.module.scss";
 import CartPopup from "./cartPopup";
+import FadeInOnScroll from "@/components/FadeInOnScroll";
 const colors = [
   {
     id: 1,
@@ -86,11 +87,11 @@ const Hero = () => {
         )}
 
         <div className="w-full flex flex-col md:flex-row md:gap-7 justify-between items-start">
-          <div className="md:basis-[70%] md:h-[590px] md:mt-0 mt-10 md:mb-0 mb-5 w-full flex justify-center items-center md:bg-[#fafafa] md:rounded-r-[20px] overflow-hidden">
+          <FadeInOnScroll className="md:basis-[70%] md:h-[590px] md:mt-0 mt-10 md:mb-0 mb-5 w-full flex justify-center items-center md:bg-[#fafafa] md:rounded-r-[20px] overflow-hidden">
             <Slider />
-          </div>
+          </FadeInOnScroll>
           {!isMobile ? (
-            <div className="relative basis-[27.5%] w-full flex flex-col justify-start items-center">
+            <FadeInOnScroll className="relative basis-[27.5%] w-full flex flex-col justify-start items-center">
               <div
                 className="relative z-30 w-full h-[512px] rounded-l-[20px] overflow-y-visible bg-[#fafafa] 
           flex flex-col justify-start items-center pl-[30px] pr-[28px] pt-11 shadow-[0_28px_24px_-14px_rgba(55,0,111,0.40)]"
@@ -142,9 +143,9 @@ const Hero = () => {
                   <LiaAngleDownSolid fill="#fff" className="z-10" />
                 </div>
               </div>
-            </div>
+            </FadeInOnScroll>
           ) : (
-            <div className="relative w-[90%] flex flex-col justify-center items-center mb-[78px]">
+            <FadeInOnScroll className="relative w-[90%] flex flex-col justify-center items-center mb-[78px]">
               <div className="w-full  py-7 px-9 flex flex-col justify-center items-center rounded-r-[28px] z-20 bg-[#fafafa] shadow-[0_28px_24px_-14px_rgba(55,0,111,0.40)]">
                 <p className="w-full pb-2 text-[#3a3a3a] text-2xl font-bold leading-[96%]">
                   Osaka {!isMobile ? <br /> : <></>}
@@ -177,7 +178,7 @@ const Hero = () => {
                   <LiaAngleDownSolid fill="#fff" className="z-10" />
                 </div>
               </div>
-            </div>
+            </FadeInOnScroll>
           )}
         </div>
       </div>

@@ -2,12 +2,14 @@ import React, { useEffect, useRef, useState } from "react";
 import FreshFinds3 from "@/assets/fresh-finds-3.png";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { AnimatePresence, motion, useAnimation } from "framer-motion"; // eslint-disable-line
+import useScreenSize from "@/hooks/useScreenSize";
 
 const CartPopup = ({ isVisible }) => {
   const ref = useRef(null);
   const [showChildren, setShowChildren] = useState(false);
   const controls = useAnimation();
   const [shouldRender, setShouldRender] = useState(isVisible);
+  const isMobile = useScreenSize() < 768;
 
   useEffect(() => {
     if (isVisible) {
@@ -20,12 +22,11 @@ const CartPopup = ({ isVisible }) => {
 
     if (isVisible) {
       setShowChildren(false);
-      console.log("Animating in...");
 
       const frame = requestAnimationFrame(() => {
         controls.start({
           y: 100,
-          width: 477,
+          width: !isMobile ? 477 : 387,
           height: 104,
           opacity: 1,
           transition: { duration: 0.4, ease: "easeInOut" },
@@ -34,15 +35,12 @@ const CartPopup = ({ isVisible }) => {
 
       const childTimeout = setTimeout(() => {
         setShowChildren(true);
-      }, 400);
+      }, 50);
       return () => {
         cancelAnimationFrame(frame);
         clearTimeout(childTimeout);
       };
     } else {
-      // STEP 1: fade out opacity
-      console.log("Animating out...");
-
       setShowChildren(false);
       setTimeout(() => {
         controls
@@ -59,10 +57,11 @@ const CartPopup = ({ isVisible }) => {
                 duration: 0.4,
               },
             });
-            //   setShouldRender(false);
           });
       }, 1000);
     }
+
+    // eslint-disable-next-line
   }, [isVisible, shouldRender]);
 
   if (!shouldRender) return null;
@@ -78,7 +77,7 @@ const CartPopup = ({ isVisible }) => {
         opacity: 0,
       }}
       animate={controls}
-      className="z-[100] scale-[60%] top-0 fixed left-0 right-0 mx-auto px-[55px] py-5 rounded-full
+      className="z-[100] scale-[60%] top-0 fixed left-0 right-0 mx-auto px-6 md:px-[55px] py-5 rounded-full
          flex justify-between items-center bg-white shadow-[0px_24px_36px_-20px_rgba(0,0,0,0.12)]"
     >
       <motion.img
@@ -108,7 +107,7 @@ const CartPopup = ({ isVisible }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: showChildren ? 1 : 0 }}
         transition={{ duration: 0.4, delay: 0.6 }}
-        className="w-[85px] h-[64px] flex justify-center items-center !rounded-full 
+        className=" w-[65px] md:w-[85px] h-[64px] flex justify-center items-center !rounded-full 
               border-[2px] border-[rgba(226,203,255,0.10)] bg-gradient-to-l from-[#7445B2] to-[#8D5BCF]"
       >
         <MdKeyboardArrowRight size={10} fill="#fff" />

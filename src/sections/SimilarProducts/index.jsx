@@ -1,3 +1,4 @@
+import FadeInOnScroll from "@/components/FadeInOnScroll";
 import { similarProductItems } from "@/constants";
 import useScreenSize from "@/hooks/useScreenSize";
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
@@ -17,7 +18,7 @@ const SimilarProducts = () => {
     setActiveSlide(similarProductItems[0]);
   }, []);
   return (
-    <div className="scroll-snap-start md:pl-[100px] w-full flex flex-col gap-[30px] justify-start items-center md:pt-[80px] pt-8 pb-[52px] md:pb-[120px]">
+    <FadeInOnScroll className="scroll-snap-start md:pl-[100px] w-full flex flex-col gap-[30px] justify-start items-center md:pt-[80px] pt-8 pb-[52px] md:pb-[120px]">
       <h3 className="w-full text-2xl md:text-[74px] leading-[112%] px-7 text-[#3A3A3A]">
         <em className="not-italic font-bold">Similar</em> Products
       </h3>
@@ -87,7 +88,7 @@ const SimilarProducts = () => {
           </button>
         </div>
       </Splide>
-    </div>
+    </FadeInOnScroll>
   );
 };
 

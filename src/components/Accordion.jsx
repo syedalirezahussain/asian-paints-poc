@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FiMinus, FiPlus } from "react-icons/fi";
+import FadeInOnScroll from "./FadeInOnScroll";
 
 const AccordionItem = ({ index, title, content, isOpen, onClick }) => {
   return (
@@ -32,7 +33,7 @@ const Accordion = ({ items }) => {
   };
 
   return (
-    <div className="basis-[48%] flex flex-col justify-start items-center mx-3 md:mx-0 px-7 md:px-10 py-8 md:py-16 rounded-[20px] bg-[#fafafa]">
+    <FadeInOnScroll className="basis-[48%] flex flex-col justify-start items-center mx-3 md:mx-0 px-7 md:px-10 py-8 md:py-16 rounded-[20px] bg-[#fafafa]">
       {items?.map((item, index) => (
         <AccordionItem
           key={index}
@@ -43,7 +44,7 @@ const Accordion = ({ items }) => {
           onClick={toggle}
         />
       ))}
-    </div>
+    </FadeInOnScroll>
   );
 };
 

@@ -6,6 +6,7 @@ import FreshFinds3 from "@/assets/fresh-finds-3.png";
 import FreshFinds4 from "@/assets/fresh-finds-4.png";
 import useScreenSize from "@/hooks/useScreenSize";
 import HomeLine from "@/components/icons/HomeLine";
+import FadeInOnScroll from "@/components/FadeInOnScroll";
 
 const FreshFinds = () => {
   const isMobile = useScreenSize() < 768;
@@ -16,17 +17,17 @@ const FreshFinds = () => {
         !isMobile && "container"
       } w-full flex flex-col justify-start items-center`}
     >
-      <div className="w-full flex flex-col justify-center items-center gap-1 md:gap-5 pb-9">
+      <FadeInOnScroll className="w-full flex flex-col justify-center items-center gap-1 md:gap-5 pb-9">
         <h3 className="md:w-full text-[28px] md:text-[74px] leading-[112%] text-[#3A3A3A]">
           <em className="not-italic font-bold">Fresh</em> Finds
         </h3>
         <p className="md:w-full text-[20px] md:text-[32px] leading-[101%] text-[#2B2B2B]">
           {!isMobile ? "Trending" : ""} Stories of the Decor World
         </p>
-      </div>
+      </FadeInOnScroll>
 
       {isMobile ? (
-        <div className="w-full grid grid-cols-2 row-span-4 gap-2">
+        <FadeInOnScroll className="w-full grid grid-cols-2 row-span-4 gap-2">
           <div className="col-span-1 aspect-square row-span-1 w-full rounded-[20px] overflow-hidden">
             <img
               src={FreshFinds1}
@@ -88,9 +89,9 @@ const FreshFinds = () => {
               alt="fresh-finds-1.png"
             />
           </div>
-        </div>
+        </FadeInOnScroll>
       ) : (
-        <div className="grid grid-cols-4 grid-rows-2 h-[1017px] gap-x-5 gap-y-[22px]">
+        <FadeInOnScroll className="grid grid-cols-4 grid-rows-2 h-[1017px] gap-x-5 gap-y-[22px]">
           {/* ROW 1 */}
           <div className="row-span-1 col-span-2 overflow-hidden rounded-[20px]">
             <img
@@ -144,7 +145,7 @@ const FreshFinds = () => {
               alt="fresh-finds-2.png"
             />
           </div>
-        </div>
+        </FadeInOnScroll>
       )}
     </div>
   );

@@ -1,12 +1,18 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion"; // eslint-disable-line
 
-const FadeInOnScroll = ({ children, delay = 0.2, duration = 0.6, y = 30 }) => {
+const FadeInOnScroll = ({
+  className,
+  children,
+  delay = 0.2,
+  duration = 0.6,
+  y = 30,
+}) => {
   const containerVariants = {
     hidden: {},
     show: {
       transition: {
-        staggerChildren: 0.2, // ⏱️ stagger between children
+        staggerChildren: 0.2,
       },
     },
   };
@@ -18,23 +24,30 @@ const FadeInOnScroll = ({ children, delay = 0.2, duration = 0.6, y = 30 }) => {
 
   const ref = useRef(null);
   const isInView = useInView(ref, {
-    once: true, // 👈 fade only once on first scroll
-    margin: "0px 0px -10% 0px", // optional trigger threshold
+    once: true,
+    margin: "0px 0px -10% 0px",
   });
 
   return (
     <motion.div
+      className={className}
       ref={ref}
       initial={{ opacity: 0, y }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration, delay, ease: "easeOut" }}
       variants={containerVariants}
     >
-      {React.Children.map(children, (child, index) => (
-        <motion.div key={index} variants={childVariants}>
-          {child}
-        </motion.div>
-      ))}
+      {React.Children.map(children, (child) => {
+        if (React.isValidElement(child)) {
+          return React.cloneElement(child, {
+            ...child.props,
+            variants: childVariants,
+            initial: "hidden",
+            animate: isInView ? "show" : "hidden",
+          });
+        }
+        return child;
+      })}
     </motion.div>
   );
 };
