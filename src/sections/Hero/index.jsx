@@ -4,6 +4,8 @@ import React, { useState, useRef, useEffect } from "react";
 import Slider from "@/sections/Hero/slider";
 import Accordion from "./accordion";
 import { AnimatePresence } from "framer-motion";
+import FadeInOnScroll from "@/components/FadeInOnScroll";
+import CartPopup from "./cartPopup";
 
 // icons
 import { SlArrowRight } from "react-icons/sl";
@@ -11,14 +13,14 @@ import { LiaAngleDownSolid } from "react-icons/lia";
 import GradientHeart from "@/components/icons/GradientHeart";
 import { LuInfo } from "react-icons/lu";
 import Location from "@/components/icons/Location";
+import { FiChevronRight } from "react-icons/fi";
 
 // hooks
 import useScreenSize from "@/hooks/useScreenSize";
 
 // styles
 import styles from "./styles.module.scss";
-import CartPopup from "./cartPopup";
-import FadeInOnScroll from "@/components/FadeInOnScroll";
+
 const colors = [
   {
     id: 1,
@@ -81,23 +83,23 @@ const Hero = () => {
           </div>
         )}
 
-        <div className="w-full flex flex-col md:flex-row md:gap-7 justify-between items-start">
-          <FadeInOnScroll className="md:basis-[70%] md:h-[590px] md:mt-0 mt-10 md:mb-0 mb-5 w-full flex justify-center items-center md:bg-[#fafafa] md:rounded-r-[20px] overflow-hidden">
+        <div className="w-full flex flex-col md:flex-row md:gap-7 justify-start items-start">
+          <FadeInOnScroll className="md:basis-[66%] md:h-[590px] md:mt-0 mt-10 md:mb-0 mb-5 w-full flex justify-center items-center md:bg-[#fafafa] md:rounded-r-[20px] overflow-hidden">
             <Slider />
           </FadeInOnScroll>
           {!isMobile ? (
             <FadeInOnScroll className="relative basis-[27.5%] w-full flex flex-col justify-start items-center">
               <div
-                className="relative z-30 w-full h-[512px] rounded-l-[20px] overflow-y-visible bg-[#fafafa] 
+                className="relative z-30 w-full h-[512px] rounded-[20px] overflow-y-visible bg-[#fafafa] 
           flex flex-col justify-start items-center pl-[30px] pr-[28px] pt-11 shadow-[0_28px_24px_-14px_rgba(55,0,111,0.40)]"
               >
-                <div className="w-full flex justify-start items-center gap-2">
+                <div className="w-full flex justify-between items-center gap-2">
                   <p className="text-[#3a3a3a] text-2xl md:text-5xl font-bold leading-[96%]">
                     Osaka {!isMobile ? <br /> : <></>}
                     <em className="not-italic font-normal">Dining Chair</em>
                   </p>
 
-                  <GradientHeart />
+                  <GradientHeart className="mr-[10px]" />
                 </div>
 
                 <p className="text-base md:text-[20px] font-medium text-[#3a3a3a] leading-[102%] mt-2 md:mt-[14px] w-full">
@@ -123,14 +125,14 @@ const Hero = () => {
                     },
                     {
                       title: "In Store",
-                      content: <></>,
+                      content: <AccordionItem3 />,
                       id: 3,
                     },
                   ]}
                 />
               </div>
 
-              <div className="w-full z-[10] flex flex-col justify-center items-center mt-auto absolute -bottom-[80px] left-0 rounded-bl-[28px] overflow-hidden">
+              <div className="w-full z-[10] flex flex-col justify-center items-center mt-auto absolute -bottom-[80px] left-0 rounded-[28px] 2xl:!rounded-br-[20px] overflow-hidden">
                 <div
                   className={`w-full h-[116px] border-t border-[#BBBBBB33] flex justify-between items-center px-[30px] pt-15 pb-7 cursor-pointer ${styles.addToCart}`}
                 >
@@ -237,6 +239,23 @@ const AccordionItem2 = () => {
         <p className="text-[12px] leading-[140%] font-medium text-[#202129]">
           10 Business Days
         </p>
+      </div>
+    </div>
+  );
+};
+
+const AccordionItem3 = () => {
+  return (
+    <div
+      className="w-full h-[80px] relative rounded-[12px] flex flex-col justify-start items-start overflow-hidden"
+      style={{
+        backgroundImage: "url(/src/assets/store-accordion-bg.png)",
+      }}
+    >
+      <div className="w-full h-full bg-gradient-to-r from-[#FFFFFF] from-30% to-[rgba(0,0,0,0.2)] absolute inset-0 m-auto"></div>
+      <div className="w-full flex justify-start items-center gap-[2px]">
+        <h3>Find a store</h3>
+        <FiChevronRight />
       </div>
     </div>
   );

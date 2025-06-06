@@ -88,7 +88,7 @@ const Footer = () => {
 
       {!isMobile && (
         <div className="basis-[37%] w-full flex flex-col justify-start items-start">
-          <div className="w-full flex justify-between items-start">
+          <div className="w-full flex justify-between items-start border-t border-[#CBDADA]">
             <ul className="list-none basis-[50%]">
               <li className="flex justify-start items-center gap-2 mb-6 uppercase text-[10px] text-[#D0D0C8] leading-[100%] font-medium tracking-[0.4px] opacity-[0.4]">
                 <span className="block w-2 h-2 opacity-[0.2] bg-[#D0D0C8] rounded-full"></span>

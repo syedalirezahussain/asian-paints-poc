@@ -29,14 +29,14 @@ const UtopianDream = () => {
           </h3>
         </div>
 
-        <div className="relative w-full h-[470px] md:h-[590px] md:rounded-[20px] rounded-tl-[120px] md:rounded-tl-[272px] rotate-y-180 overflow-hidden">
+        <div className="relative w-full h-[470px] md:h-[590px] md:rounded-none rounded-[20px_120px_20px_20px] overflow-hidden">
           <img
-            className="w-full h-full object-cover md:scale-100 scale-[160%]"
+            className="w-full h-full md:object-contain object-cover md:scale-100 scale-[160%]"
             src={UtopianDreamImg}
             alt="utopian-dream.png"
           />
           {isMobile && (
-            <span className="absolute inset-0 m-auto w-full bg-gradient-to-r h-full md:h-[590px] md:rounded-[20px] rounded-tl-[120px] md:rounded-tl-[272px] from-[#0000001A] to-[#00000099]"></span>
+            <span className="absolute inset-0 m-auto w-full bg-gradient-to-r h-full md:h-[590px] md:rounded-[0px] rounded-tl-[120px] from-[#0000001A] to-[#00000099]"></span>
           )}
         </div>
 

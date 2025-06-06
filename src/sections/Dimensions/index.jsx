@@ -19,8 +19,8 @@ const Dimensions = () => {
   const isMobile = useScreenSize() < 768;
   return (
     <div
-      className={`scroll-snap-start ${
-        !isMobile ? "container" : ""
+      className={`${
+        !isMobile && "container"
       } w-full flex flex-col justify-start items-center gap-7 !pt-[39px] md:!pt-[70px]`}
     >
       {!isMobile && (
@@ -45,7 +45,7 @@ const Dimensions = () => {
               <FaBezierCurve strokeWidth={0.5} size={isMobile ? 16 : 20} />
             </span>
 
-            <div className="w-full flex justify-between items-center gap-5 md:gap-7">
+            <div className=" flex justify-start items-center gap-5 md:gap-7">
               <div className="flex flex-col justify-start items-start gap-2">
                 <p className="leading-[132%] text-[#6B6767] text-[12px] md:text-base">
                   Length
@@ -85,7 +85,7 @@ const Dimensions = () => {
               className="w-full flex flex-col justify-between items-start h-[164px] md:h-[213px] basis-[48.2%] md:basis-[47.5%] border border-[#0000000F] rounded-[20px] p-6 md:px-7 md:py-[33px]"
             >
               <span className="w-11 h-11 md:w-[52px] md:h-[52px] flex justify-center items-center rounded-full border border-[#0000001A]">
-                <item.Icon className="w-4 h-4" />
+                <item.Icon className="w-6 h-6" />
               </span>
               <div className="flex flex-col justify-start items-start gap-1 md:gap-2">
                 <p className="leading-[132%] text-[#6B6767] text-[12px] md:text-base">
@@ -125,7 +125,7 @@ const Dimensions = () => {
       </div>
 
       <div className="w-full flex md:flex-row flex-col justify-between items-start ">
-        <FadeInOnScroll className="md:basis-[48%] h-[395px] md:h-[691px] md:rounded-[20px] md:border border-[#0000001A] overflow-hidden">
+        <FadeInOnScroll className="md:basis-[48%] h-[395px] md:mb-0 mb-6 md:h-[691px] md:rounded-[20px] md:border border-[#0000001A] overflow-hidden">
           <img
             src={Dimensions2}
             alt="dimensions-2.png"

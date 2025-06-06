@@ -91,7 +91,7 @@ const FreshFinds = () => {
           </div>
         </FadeInOnScroll>
       ) : (
-        <FadeInOnScroll className="grid grid-cols-4 grid-rows-2 h-[1017px] gap-x-5 gap-y-[22px]">
+        <FadeInOnScroll className="grid grid-cols-4 grid-rows-[470px_470px] h-[1017px] gap-x-5 gap-y-[22px]">
           {/* ROW 1 */}
           <div className="row-span-1 col-span-2 overflow-hidden rounded-[20px]">
             <img

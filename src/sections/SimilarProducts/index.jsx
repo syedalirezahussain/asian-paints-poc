@@ -14,11 +14,14 @@ const SimilarProducts = () => {
     similarProductItems.findIndex((item) => item.id === activeSlide.id) ===
     similarProductItems.length - 1;
 
+  const isFirstSlide =
+    similarProductItems.findIndex((item) => item.id === activeSlide.id) === 0;
+
   useEffect(() => {
     setActiveSlide(similarProductItems[0]);
   }, []);
   return (
-    <FadeInOnScroll className="scroll-snap-start md:pl-[100px] w-full flex flex-col gap-[30px] justify-start items-center md:pt-[80px] pt-8 pb-[52px] md:pb-[120px]">
+    <FadeInOnScroll className="md:pl-[64px] w-full flex flex-col gap-[30px] justify-start items-center md:pt-[80px] pt-8 pb-[52px] md:pb-[120px]">
       <h3 className="w-full text-2xl md:text-[74px] leading-[112%] px-7 text-[#3A3A3A]">
         <em className="not-italic font-bold">Similar</em> Products
       </h3>
@@ -71,18 +74,27 @@ const SimilarProducts = () => {
 
         {/* ARROWS */}
         <div className="splide__arrows absolute -top-[44px] md:-top-[75px] right-5 md:right-[63px] flex justify-center items-center gap-3">
-          <button className="!w-11 !h-11 md:!w-16 md:!h-16 splide__arrow splide__arrow--prev !border !border-[#C1C1C1] !bg-white !opacity-100 !left-[unset] !relative focus:!outline-none focus-visible:!outline-none">
+          <button
+            disabled={isFirstSlide}
+            className={`!w-11 !h-11 md:!w-16 md:!h-16 splide__arrow splide__arrow--prev !border !bg-white
+                       !opacity-100 !left-[unset] !relative focus:!outline-none focus-visible:!outline-none
+                       disabled:cursor-not-allowed ${
+                         isFirstSlide
+                           ? "!pointer-events-none !border-[#C1C1C1]"
+                           : "!border-[#868686]"
+                       }`}
+          >
             <SlArrowRight stroke="#9a9a9a" size={20} className="!w-2 !h-2" />
           </button>
           <button
             disabled={isLastSlide}
-            className={`!w-11 !h-11 md:!w-16 md:!h-16 splide__arrow splide__arrow--next !border !border-[#C1C1C1] !bg-white 
-                    !right-[unset] !relative focus:!outline-none focus-visible:!outline-none
-                    disabled:opacity-50 disabled:cursor-not-allowed ${
-                      isLastSlide
-                        ? "!opacity-50 !pointer-events-none"
-                        : "!opacity-100 "
-                    }`}
+            className={`!w-11 !h-11 md:!w-16 md:!h-16 splide__arrow splide__arrow--next !border !bg-white 
+                       !right-[unset] !relative focus:!outline-none focus-visible:!outline-none
+                       disabled:cursor-not-allowed !opacity-100 ${
+                         isLastSlide
+                           ? "!pointer-events-none !border-[#C1C1C1]"
+                           : "!border-[#868686]"
+                       }`}
           >
             <SlArrowRight stroke="#9a9a9a" className="!w-2 !h-2" size={20} />
           </button>

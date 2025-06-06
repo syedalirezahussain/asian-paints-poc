@@ -20,12 +20,15 @@ const ProductSlider = () => {
     productSliderItems.findIndex((item) => item.id === activeSlide.id) ===
     productSliderItems.length - 1;
 
+  const isFirstSlide =
+    productSliderItems.findIndex((item) => item.id === activeSlide.id) === 0;
+
   useEffect(() => {
     setActiveSlide(productSliderItems[0]);
   }, []);
 
   return (
-    <div className="w-full flex justify-center items-start mt-[52px] gap-12 md:pl-[100px]">
+    <div className="w-full flex justify-center items-start mt-[52px] gap-12 md:pl-[64px]">
       {!isMobile && (
         <FadeInOnScroll className="w-full basis-[30%] h-full flex flex-col justify-start items-center py-12">
           {productSliderItems.map((item, index) => (
@@ -115,7 +118,16 @@ const ProductSlider = () => {
           {/* ARROWS */}
           {!isMobile && (
             <div className="splide__arrows absolute bottom-7 -left-[50%] flex justify-center items-center gap-3">
-              <button className="!w-16 !h-16 splide__arrow splide__arrow--prev !border !border-[#C1C1C1] !bg-white !opacity-100 !left-[unset] !relative focus:!outline-none focus-visible:!outline-none">
+              <button
+                disabled={isFirstSlide}
+                className={`!w-16 !h-16 splide__arrow splide__arrow--prev !border !bg-white
+              !opacity-100 !left-[unset] !relative focus:!outline-none focus-visible:!outline-none
+              disabled:cursor-not-allowed ${
+                isFirstSlide
+                  ? "!pointer-events-none !border-[#C1C1C1]"
+                  : "!border-[#868686]"
+              }`}
+              >
                 <SlArrowRight
                   stroke="#9a9a9a"
                   size={20}
@@ -124,12 +136,12 @@ const ProductSlider = () => {
               </button>
               <button
                 disabled={isLastSlide}
-                className={`!w-16 !h-16 splide__arrow splide__arrow--next !border !border-[#C1C1C1] !bg-white 
+                className={`!w-16 !h-16 splide__arrow splide__arrow--next !border !bg-white 
               !right-[unset] !relative focus:!outline-none focus-visible:!outline-none
-              disabled:opacity-50 disabled:cursor-not-allowed ${
+              disabled:cursor-not-allowed !opacity-100 ${
                 isLastSlide
-                  ? "!opacity-50 !pointer-events-none"
-                  : "!opacity-100 "
+                  ? "!pointer-events-none !border-[#C1C1C1]"
+                  : "!border-[#868686]"
               }`}
               >
                 <SlArrowRight

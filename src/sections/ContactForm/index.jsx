@@ -107,11 +107,10 @@ const ContactForm = () => {
             <div className="flex items-center px-6 py-[8.5px] md:py-5 text-[14px] md:text-base leading-[132%] tracking-[-0.16px] text-[#b7b7b7] rounded-lg border border-[#D1DEE1] bg-white col-span-1">
               <span className="text-[#dbdbdb] mr-2 flex items-center leading-[132%] tracking-[-0.16px]">
                 +91
-                <span className="h-[15px] md:h-5 border-l border-[#b7b7b7] mx-3" />
+                <span className="h-[15px] w-[1px] bg-[#dbdbdb] mx-3" />
               </span>
               <input
                 type="tel"
-                placeholder="Phone Number"
                 className="outline-none flex-1 bg-transparent"
               />
             </div>
@@ -144,10 +143,7 @@ const ContactForm = () => {
           </span>
         </label>
 
-        <button
-          className="md:w-auto w-[calc(100%-8px)] mx-auto md:mx-[unset] !py-6 !pl-8 md:!pl-10 !pr-9 flex justify-between items-center gap-6 !rounded-full 
-        border-[2px] border-[rgba(226,203,255,0.10)] bg-gradient-to-l from-[#7445B2] to-[#8D5BCF]"
-        >
+        <button className="gradientBorder md:w-auto w-[calc(100%-8px)] mx-auto md:mx-[unset] !py-6 !pl-8 md:!pl-10 !pr-9 flex justify-between items-center gap-6 !rounded-full ">
           <p className="md:text-lg leading-[136%] tracking-[-0.36px] font-medium text-white">
             Book A Free Site Visit
           </p>

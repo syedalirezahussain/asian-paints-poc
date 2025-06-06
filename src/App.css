@@ -14,26 +14,29 @@ body {
 }
 
 .container {
-  max-width: 1366px;
-  padding: 0 63px;
+  max-width: 1440px;
+  padding: 0 64px;
 }
 
 #root {
   width: 100%;
 }
 
-input {
+input,
+button {
+  &:hover,
   &:focus,
   &:focus-visible,
   &:focus-within {
     outline: none !important;
+    border: none !important;
   }
 }
 
 /* ###############################################################
 ############################# ACCORDION ##########################
 ################################################################## */
-
+/* 
 .accordionItem {
   &:not(:last-child) {
     &::after {
@@ -41,11 +44,11 @@ input {
       display: block;
       width: 100%;
       height: 1px;
-      background-color: #0000001a; /* Gray-300 */
+      background-color: #0000001a; 
       margin-top: 28px;
     }
   }
-}
+} */
 
 /* ###############################################################
 ############################# TAILWIND ###########################
@@ -53,6 +56,7 @@ input {
 
 @theme {
   --ease-in-pagination: cubic-bezier(0, 0.46, 0.63, 0.56);
+  --breakpoint-2xl: 1445px;
 }
 
 /* ###############################################################
@@ -73,5 +77,31 @@ input {
       height: 390px !important;
       max-height: 390px !important;
     }
+  }
+}
+
+.gradientBorder {
+  position: relative;
+  background: linear-gradient(90deg, #9264cf 0%, #bea3df 100%);
+  z-index: 1;
+  border: none !important;
+
+  &:hover {
+    border: none !important;
+    outline: none !important;
+  }
+
+  &::after {
+    display: block;
+    content: "";
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    background: linear-gradient(90deg, #7445b2 0%, #8d5bcf 100%);
+    z-index: -1;
+    overflow: hidden;
+    border-radius: 60px;
   }
 }

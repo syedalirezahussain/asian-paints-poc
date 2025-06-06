@@ -3,6 +3,11 @@ import Grid from "@/components/icons/Grid";
 import Stack from "@/components/icons/Stack";
 import Certificate from "@/components/icons/Certificate";
 
+import HeroSlider1 from "@/assets/hero-slider-1.png";
+import HeroSlider2 from "@/assets/hero-slider-2.png";
+import HeroSlider3 from "@/assets/hero-slider-3.png";
+import HeroSlider4 from "@/assets/hero-slider-4.png";
+
 import UtopianDreamImg from "@/assets/utopian-dream.png";
 import HeroChair from "@/assets/hero-chair.png";
 import FreshFinds3 from "@/assets/fresh-finds-3.png";
@@ -59,19 +64,25 @@ export const dimensionItems = [
 export const heroSliderItems = [
   {
     id: 1,
-    image: UtopianDreamImg,
+    image: HeroSlider1,
     alt: "Utopian Dream",
     className: "w-full h-full object-cover",
   },
   {
     id: 2,
-    image: HeroChair,
+    image: HeroSlider2,
     alt: "Hero Chair",
     className: "",
   },
   {
     id: 3,
-    image: FreshFinds3,
+    image: HeroSlider3,
+    alt: "Fresh Finds 3",
+    className: "",
+  },
+  {
+    id: 3,
+    image: HeroSlider4,
     alt: "Fresh Finds 3",
     className: "",
   },
