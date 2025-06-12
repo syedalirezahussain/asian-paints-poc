@@ -17,7 +17,7 @@ const Slider = () => {
   return (
     <div className="w-full flex flex-col justify-start items-center">
       <Splide
-        className="heroSlider relative h-[390px] md:h-auto w-full"
+        className="heroSlider relative h-[390px] md:h-auto w-full bg-[#f6f6f6]"
         hasTrack={false}
         aria-label="My Favorite Images"
         options={{
@@ -64,7 +64,9 @@ const Slider = () => {
                       src={item.image}
                       alt={item.alt}
                       className={`is-active w-10 h-10 overflow-hidden rounded-[8px] transition-all duration-300 ease-linear ${
-                        activeSlide.id === item.id ? "!w-16 !h-16 mb-6 " : ""
+                        activeSlide.id === item.id
+                          ? "!w-16 !h-16 mb-6 border border-[#0000001A]"
+                          : ""
                       }`}
                     />
                   </li>

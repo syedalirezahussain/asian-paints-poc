@@ -7,6 +7,7 @@ import HeroSlider1 from "@/assets/hero-slider-1.png";
 import HeroSlider2 from "@/assets/hero-slider-2.png";
 import HeroSlider3 from "@/assets/hero-slider-3.png";
 import HeroSlider4 from "@/assets/hero-slider-4.png";
+import HeroSlider5 from "@/assets/hero-slider-5.png";
 
 import UtopianDreamImg from "@/assets/utopian-dream.png";
 import HeroChair from "@/assets/hero-chair.png";
@@ -15,10 +16,13 @@ import FreshFinds3 from "@/assets/fresh-finds-3.png";
 import ProductSlider1 from "@/assets/product-slider-1.png";
 import ProductSlider2 from "@/assets/product-slider-2.png";
 import ProductSlider3 from "@/assets/product-slider-3.png";
+import ProductSlider4 from "@/assets/product-slider-4.png";
 
 import SimilarProducts1 from "@/assets/similar-products-1.png";
 import SimilarProducts2 from "@/assets/similar-products-2.jpg";
 import SimilarProducts3 from "@/assets/similar-products-3.png";
+import SimilarProducts4 from "@/assets/similar-products-4.png";
+import SimilarProducts5 from "@/assets/similar-products-5.png";
 
 export const accordionItems = [
   {
@@ -72,19 +76,25 @@ export const heroSliderItems = [
     id: 2,
     image: HeroSlider2,
     alt: "Hero Chair",
-    className: "",
+    className: "w-full h-full object-cover",
   },
   {
     id: 3,
     image: HeroSlider3,
     alt: "Fresh Finds 3",
-    className: "",
+    className: "w-full h-full object-cover",
   },
   {
-    id: 3,
+    id: 4,
     image: HeroSlider4,
     alt: "Fresh Finds 3",
-    className: "",
+    className: "w-full h-full object-cover",
+  },
+  {
+    id: 5,
+    image: HeroSlider5,
+    alt: "Fresh Finds 3",
+    className: "w-full h-full object-cover",
   },
 ];
 
@@ -119,8 +129,8 @@ export const productSliderItems = [
   {
     id: 4,
     title: "Louvre Tiles",
-    image: HeroChair,
-    alt: "hero-chair.png",
+    image: ProductSlider4,
+    alt: "product-slider-4.png",
     price: "12,500 INR",
   },
 ];
@@ -148,6 +158,24 @@ export const similarProductItems = [
     image: SimilarProducts3,
     styles: {
       transform: "scale(70%)",
+    },
+  },
+  {
+    id: 4,
+    title: "Porto High Chair",
+    price: "12,500 INR",
+    image: SimilarProducts4,
+    styles: {
+      transform: "",
+    },
+  },
+  {
+    id: 5,
+    title: "Porto High Chair",
+    price: "12,500 INR",
+    image: SimilarProducts5,
+    styles: {
+      transform: "",
     },
   },
 ];
