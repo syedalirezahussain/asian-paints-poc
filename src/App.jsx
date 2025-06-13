@@ -13,7 +13,7 @@ import Lenis from "@/components/Lenis";
 
 function App() {
   return (
-    <div className="wrapper w-screen max-w-[1440px] mx-auto flex flex-col justify-start items-center mb-3 md:mb-6 scroll-snap-y scroll-snap-mandatory">
+    <div className="wrapper w-screen max-w-[1440px] mx-auto flex flex-col justify-start items-center mb-3 md:mb-6">
       <Lenis />
       <Navbar />
       <Hero />

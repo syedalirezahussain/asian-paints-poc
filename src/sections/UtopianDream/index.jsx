@@ -13,7 +13,7 @@ const UtopianDream = () => {
   return (
     <div
       id="utopian-dream"
-      className="scroll-snap-start w-full flex flex-col justify-start items-center pt-[80px] pb-[60px] "
+      className="w-full flex flex-col justify-start items-center pt-[80px] pb-[60px] "
     >
       <FadeInOnScroll
         className={`w-full ${

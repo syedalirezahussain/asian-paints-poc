@@ -17,7 +17,7 @@ const Slider = () => {
   return (
     <div className="w-full h-full flex flex-col justify-start items-center">
       <Splide
-        className="heroSlider relative h-[calc(100%-112px)] md:h-auto w-full bg-[#f6f6f6]"
+        className="heroSlider relative h-full md:h-auto w-full bg-[#f6f6f6]"
         hasTrack={false}
         aria-label="My Favorite Images"
         options={{
@@ -53,32 +53,29 @@ const Slider = () => {
           </button>
         </div>
 
-        {!isMobile && (
-          <>
-            {/* PAGINATION */}
-            <ul className="h-[88px] md:h-auto flex justify-center items-center gap-2 mt-5 md:mt-0 md:absolute md:left-9 md:bottom-7">
-              {heroSliderItems.map((item) => {
-                return (
-                  <li role="presentation" key={item?.id}>
-                    <img
-                      src={item.image}
-                      alt={item.alt}
-                      className={`is-active w-10 h-10 overflow-hidden rounded-[8px] transition-all duration-300 ease-linear ${
-                        activeSlide.id === item.id
-                          ? "!w-16 !h-16 mb-6 border border-[#0000001A]"
-                          : ""
-                      }`}
-                    />
-                  </li>
-                );
-              })}
-            </ul>
-          </>
-        )}
+        {/* PAGINATION */}
+
+        <ul className="h-[88px] md:h-auto flex justify-center items-center gap-2 mt-5 md:mt-0 absolute md:left-9 left-0 right-0 md:right-[unset] bottom-0 md:bottom-7">
+          {heroSliderItems.map((item) => {
+            return (
+              <li role="presentation" key={item?.id}>
+                <img
+                  src={item.image}
+                  alt={item.alt}
+                  className={`is-active w-10 h-10 overflow-hidden rounded-[8px] transition-all duration-300 ease-linear ${
+                    activeSlide.id === item.id
+                      ? "!w-16 !h-16 mb-6 border border-[#0000001A]"
+                      : ""
+                  }`}
+                />
+              </li>
+            );
+          })}
+        </ul>
       </Splide>
-      {isMobile && (
+      {/* {isMobile && (
         <>
-          {/* PAGINATION */}
+          PAGINATION
           <ul className="h-[88px] md:h-auto flex justify-center items-center gap-2 mt-5 md:mt-0 md:absolute md:left-9 md:bottom-7">
             {heroSliderItems.map((item) => {
               return (
@@ -97,7 +94,7 @@ const Slider = () => {
             })}
           </ul>
         </>
-      )}
+      )} */}
     </div>
   );
 };

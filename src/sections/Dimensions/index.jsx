@@ -21,7 +21,7 @@ const Dimensions = () => {
     <div
       className={`${
         !isMobile && "container"
-      } w-full flex flex-col justify-start items-center gap-7 !pt-[39px] md:!pt-[70px]`}
+      } w-full flex flex-col justify-start items-center gap-7 !pt-[16px] md:!pt-[70px]`}
     >
       {!isMobile && (
         <FadeInOnScroll className="w-[52%] flex flex-col justify-start items-start gap-[30px] mr-auto text-[#3a3a3a]">
@@ -99,7 +99,7 @@ const Dimensions = () => {
           ))}
         </div>
 
-        <FadeInOnScroll className="relative md:w-[calc(100%-47%)] md:h-[691px] md:rounded-[20px] border border-[#0000001A] md:overflow-hidden mb-[209px] md:mb-0">
+        <FadeInOnScroll className="relative md:w-[calc(100%-47%)] md:h-[691px] md:rounded-[20px] border border-[#0000001A] md:overflow-hidden mb-[88px] md:mb-0">
           <img
             src={Dimensions1}
             alt="dimensions-1.png"
