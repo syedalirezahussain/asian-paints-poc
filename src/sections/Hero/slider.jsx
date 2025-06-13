@@ -15,16 +15,16 @@ const Slider = () => {
   }, []);
 
   return (
-    <div className="w-full flex flex-col justify-start items-center">
+    <div className="w-full h-full flex flex-col justify-start items-center">
       <Splide
-        className="heroSlider relative h-[390px] md:h-auto w-full bg-[#f6f6f6]"
+        className="heroSlider relative h-[calc(100%-112px)] md:h-auto w-full bg-[#f6f6f6]"
         hasTrack={false}
         aria-label="My Favorite Images"
         options={{
           pagination: false,
           type: "loop",
           arrows: !isMobile,
-          height: isMobile ? 390 : null,
+          height: isMobile ? "100%" : null,
         }}
         onMove={(_, newIndex) => {
           setActiveSlide(heroSliderItems[newIndex]);
@@ -37,7 +37,7 @@ const Slider = () => {
                 <img
                   src={item.image}
                   alt={item.alt}
-                  className={`${item.className}`}
+                  className={`${item.className} h-full`}
                 />
               </div>
             </SplideSlide>

@@ -2,12 +2,14 @@ import React, { useEffect, useRef, useState } from "react";
 import FreshFinds3 from "@/assets/fresh-finds-3.png";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { motion, useAnimation } from "framer-motion"; // eslint-disable-line
+import useScreenSize from "@/hooks/useScreenSize";
 
 const CartPopup = ({ isVisible }) => {
   const ref = useRef(null);
   const [showChildren, setShowChildren] = useState(false);
   const controls = useAnimation();
   const [shouldRender, setShouldRender] = useState(isVisible);
+  const isMobile = useScreenSize() < 768;
 
   useEffect(() => {
     if (isVisible) {
@@ -64,7 +66,50 @@ const CartPopup = ({ isVisible }) => {
 
   if (!shouldRender) return null;
 
-  return (
+  return isMobile ? (
+    <motion.div
+      key={"cart-popup"}
+      ref={ref}
+      initial={{
+        bottom: -100,
+        width: "100%",
+        height: 102,
+      }}
+      animate={
+        isVisible
+          ? {
+              bottom: 0,
+            }
+          : {
+              bottom: -100,
+            }
+      }
+      className="z-[100] bottom-0 fixed left-0 right-0 mx-auto p-6 rounded-t-[15px]
+         flex justify-between gap-3 items-center border border-[#E9E9E959] bg-white shadow-[0px_-10px_30px_0px_rgba(46,36,54,0.05)]"
+    >
+      <img
+        src={FreshFinds3}
+        className="w-10 h-10 rounded-full bg-[#f6f6f6] overflow-hidden flex justify-center items-center"
+        alt="fresh-finds-3.png"
+      />
+
+      <div className="flex grow flex-col justify-center items-start">
+        <h3 className="text-[12px] text-[#14151799]">
+          <em className="not-italic font-bold">Foresta</em> Dining Chair
+        </h3>
+        <p className="text-[12px] font-medium text-[#141517] uppercase">
+          ₹ 32,000{" "}
+        </p>
+      </div>
+
+      <button
+        className="p-4  text-white font-bold flex justify-center items-center !rounded-full 
+              border-[2px] border-[rgba(226,203,255,0.10)] bg-gradient-to-l from-[#7445B2] to-[#8D5BCF]"
+      >
+        Add to Cart
+      </button>
+    </motion.div>
+  ) : (
     <motion.div
       key={"cart-popup"}
       ref={ref}

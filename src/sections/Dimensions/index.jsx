@@ -124,7 +124,7 @@ const Dimensions = () => {
         </FadeInOnScroll>
       </div>
 
-      <div className="w-full flex md:flex-row flex-col justify-between items-start ">
+      <div className="w-full flex md:flex-row flex-col justify-between items-center md:items-start ">
         <FadeInOnScroll className="md:basis-[48%] h-[395px] md:mb-0 mb-6 md:h-[691px] md:rounded-[20px] md:border border-[#0000001A] overflow-hidden">
           <img
             src={Dimensions2}

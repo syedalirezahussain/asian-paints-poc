@@ -67,7 +67,7 @@ const Hero = () => {
       <div
         key={"Hero"}
         ref={heroRef}
-        className="scroll-snap-start w-full flex flex-col justify-center items-center bg-white gap-8 pb-[39px] md:pb-[46px] mt-[102px]"
+        className="scroll-snap-start h-screen md:h-auto w-full flex flex-col justify-start md:justify-center items-center bg-white gap-8 pb-[39px] md:pb-[46px] mt-[60px] md:mt-[102px]"
       >
         {/* BREAD CRUMBS */}
 
@@ -83,8 +83,8 @@ const Hero = () => {
           </div>
         )}
 
-        <div className="w-full flex flex-col md:flex-row md:gap-7 justify-start items-start">
-          <FadeInOnScroll className="md:basis-[66%] md:h-[590px] md:mt-0 mt-10 md:mb-0 mb-5 w-full flex justify-center items-center md:bg-[#fafafa] md:rounded-r-[20px] overflow-hidden">
+        <div className="w-full h-full md:h-auto flex flex-col md:flex-row md:gap-7 justify-start items-start">
+          <FadeInOnScroll className="md:basis-[66%] md:h-[590px] h-[calc(100%-186px)] md:mb-0 mb-5 w-full flex justify-start md:justify-center items-center md:bg-[#fafafa] md:rounded-r-[20px] overflow-hidden">
             <Slider />
           </FadeInOnScroll>
           {!isMobile ? (
@@ -146,38 +146,40 @@ const Hero = () => {
               </div>
             </FadeInOnScroll>
           ) : (
-            <FadeInOnScroll className="relative w-[90%] flex flex-col justify-center items-center mb-[78px]">
-              <div className="w-full  py-7 px-9 flex flex-col justify-center items-center rounded-r-[28px] z-20 bg-[#fafafa] shadow-[0_28px_24px_-14px_rgba(55,0,111,0.40)]">
-                <p className="w-full pb-2 text-[#3a3a3a] text-2xl font-bold leading-[96%]">
-                  Osaka {!isMobile ? <br /> : <></>}
-                  <em className="not-italic font-normal">Dining Chair</em>
-                </p>
+            <FadeInOnScroll className="relative w-full flex flex-col justify-center items-center pb-[18px]">
+              <div className="w-full  py-7 px-3 flex flex-col justify-center items-center z-20 bg-white">
+                <div className="w-full flex justify-between items-center px-6 mb-6">
+                  <div className="w-full flex flex-col justify-start items-center text-[#3a3a3a]">
+                    <p className="w-full pb-2 font-bold leading-[96%] text-[14px]">
+                      Osaka Dining Chair
+                    </p>
 
-                <p className="text-base font-medium text-[#3a3a3a] leading-[102%] mb-4 w-full">
-                  24,999 INR
-                </p>
+                    <p className="text-[14px] font-medium text-[#3a3a3a] leading-[102%] w-full">
+                      ₹ 24,999
+                    </p>
+                  </div>
 
-                <div className="relative w-full flex justify-start items-center z-[1] gap-3 mt-2 ">
-                  {colors.map((color) => (
-                    <span
-                      key={color.id}
-                      onClick={() => setActiveColor(color.id)}
-                      className={`w-7 h-7 md:w-8 md:h-8 rounded-full bg-gradient-to-r flex justify-center items-center ${
-                        color.className
-                      } ${
-                        activeColor === color.id ? `${styles.activeColor}` : ""
-                      } cursor-pointer`}
-                    ></span>
-                  ))}
+                  <div className="relative flex justify-start items-center z-[1] gap-3 mt-2 ">
+                    {colors.map((color) => (
+                      <span
+                        key={color.id}
+                        onClick={() => setActiveColor(color.id)}
+                        className={`w-7 h-7 md:w-8 md:h-8 rounded-full bg-gradient-to-r flex justify-center items-center ${
+                          color.className
+                        } ${
+                          activeColor === color.id
+                            ? `${styles.activeColor}`
+                            : ""
+                        } cursor-pointer`}
+                      ></span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-              <div className="w-full z-10 flex flex-col justify-center items-center mt-auto absolute -bottom-[75px] left-0 rounded-br-[28px] overflow-hidden">
-                <div
-                  className={`w-full h-[116px] border-t border-[#BBBBBB33] flex justify-between items-center px-[30px] pt-15 pb-7 cursor-pointer ${styles.addToCart}`}
-                >
-                  <p className="z-10 text-white uppercase">Add to Cart</p>
-                  <LiaAngleDownSolid fill="#fff" className="z-10" />
-                </div>
+                <button className="gradientBorder w-full mx-auto !py-6 !pl-8 md:!pl-10 !pr-9 flex justify-between items-center gap-6 !rounded-full ">
+                  <p className="w-full text-center leading-[136%] tracking-[-0.36px] font-bold text-white">
+                    Add to Cart
+                  </p>
+                </button>
               </div>
             </FadeInOnScroll>
           )}
@@ -247,16 +249,24 @@ const AccordionItem2 = () => {
 const AccordionItem3 = () => {
   return (
     <div
-      className="w-full h-[80px] relative rounded-[12px] flex flex-col justify-start items-start overflow-hidden"
+      className="w-full h-[109px] relative rounded-[12px] flex flex-col justify-center items-start overflow-hidden px-[18px]"
       style={{
         backgroundImage: "url(/src/assets/store-accordion-bg.png)",
+        backgroundSize: "360px",
+        backgroundPosition: "center",
       }}
     >
-      <div className="w-full h-full bg-gradient-to-r from-[#FFFFFF] from-30% to-[rgba(0,0,0,0.2)] absolute inset-0 m-auto"></div>
-      <div className="w-full flex justify-start items-center gap-[2px]">
-        <h3>Find a store</h3>
-        <FiChevronRight />
+      <div className="w-full h-full bg-gradient-to-r from-[#FFFFFF] from-[10%] to-[rgba(0,0,0,0.2)] absolute inset-0 m-auto"></div>
+      <div className="w-full flex justify-start items-center gap-[2px] z-40 mb-1">
+        <h3 className="text-[#7849BF] text-[14px] leading-[140%] font-bold">
+          Find a store
+        </h3>
+        <FiChevronRight stroke="#7849BF" strokeWidth={2} />
       </div>
+
+      <p className="max-w-[35%] text-[#333642] text-[12px] leading-[140%] font-bold z-40">
+        Experience Beyond the Screen!
+      </p>
     </div>
   );
 };
