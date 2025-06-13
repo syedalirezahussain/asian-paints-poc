@@ -67,7 +67,7 @@ const Hero = () => {
       <div
         key={"Hero"}
         ref={heroRef}
-        className="h-screen md:h-auto w-full flex flex-col justify-start md:justify-center items-center bg-white gap-8 pb-[16px] md:pb-[46px] mt-[60px] md:mt-[102px]"
+        className="h-[calc(100vh-60px)] md:h-auto w-full flex flex-col justify-start md:justify-center items-center bg-white gap-8 md:pb-[46px] mt-[60px] md:mt-[102px]"
       >
         {/* BREAD CRUMBS */}
 
@@ -84,7 +84,7 @@ const Hero = () => {
         )}
 
         <div className="w-full h-full md:h-auto flex flex-col md:flex-row md:gap-7 justify-start items-start">
-          <FadeInOnScroll className="md:basis-[66%] md:h-[590px] h-[calc(100%-284px)] md:mb-0 mb-5 w-full flex justify-start md:justify-center items-center md:bg-[#fafafa] md:rounded-r-[20px] overflow-hidden">
+          <FadeInOnScroll className="md:basis-[66%] md:h-[590px] h-[calc(100%-224px)] md:mb-0 mb-6 w-full flex justify-start md:justify-center items-center md:bg-[#fafafa] md:rounded-r-[20px] overflow-hidden">
             <Slider />
           </FadeInOnScroll>
           {!isMobile ? (
@@ -146,8 +146,8 @@ const Hero = () => {
               </div>
             </FadeInOnScroll>
           ) : (
-            <FadeInOnScroll className="relative w-full flex flex-col justify-center items-center pb-[18px]">
-              <div className="w-full gap-3 py-6 px-3 flex flex-col justify-center items-center z-20 bg-white">
+            <FadeInOnScroll className="relative w-full flex flex-col justify-center items-center">
+              <div className="w-full gap-3 pb-6 px-3 flex flex-col justify-center items-center z-20 bg-white">
                 <div className="w-full flex flex-col justify-start items-center text-[#3a3a3a] px-6">
                   <p className="w-full pb-2 font-bold leading-[96%] text-[14px]">
                     Osaka Dining Chair
