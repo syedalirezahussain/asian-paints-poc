@@ -148,14 +148,17 @@ const Hero = () => {
           ) : (
             <FadeInOnScroll className="relative w-full flex flex-col justify-center items-center">
               <div className="w-full gap-3 pb-6 px-3 flex flex-col justify-center items-center z-20 bg-white">
-                <div className="w-full flex flex-col justify-start items-center text-[#3a3a3a] px-6">
-                  <p className="w-full pb-2 font-bold leading-[96%] text-[14px]">
-                    Osaka Dining Chair
-                  </p>
+                <div className="w-full flex justify-between items-center">
+                  <div className="w-full flex flex-col justify-start items-center text-[#3a3a3a] px-6">
+                    <p className="w-full pb-2 font-bold leading-[96%] text-[14px]">
+                      Osaka Dining Chair
+                    </p>
 
-                  <p className="text-[14px] font-medium text-[#3a3a3a] leading-[102%] w-full">
-                    ₹ 24,999
-                  </p>
+                    <p className="text-[14px] font-medium text-[#3a3a3a] leading-[102%] w-full">
+                      ₹ 24,999
+                    </p>
+                  </div>
+                  <GradientHeart className="mr-[10px]" />
                 </div>
                 <div className="w-full relative flex justify-start items-center z-[1] gap-3 mt-2 px-6 mb-3">
                   {colors.map((color) => (
@@ -170,7 +173,7 @@ const Hero = () => {
                     ></span>
                   ))}
                 </div>
-                <button className="gradientBorder w-full mx-auto !py-6 !pl-8 md:!pl-10 !pr-9 flex justify-between items-center gap-6 !rounded-full ">
+                <button className="gradientBorder w-full mx-auto !py-6 !pl-8 md:!pl-10 !pr-9 flex justify-between items-center gap-6 !rounded-full shadow-[0px_28px_24px_-14px_rgba(0,0,0,0.15)] ">
                   <p className="w-full text-center leading-[136%] tracking-[-0.36px] font-bold text-white">
                     Add to Cart
                   </p>
